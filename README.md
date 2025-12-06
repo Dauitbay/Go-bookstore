@@ -12,7 +12,7 @@ The project follows a real microservice architecture with proper separation of l
 - `internal/routes` – routing setup
 - `migrate/` – SQL database migrations
 
-Supports Docker, Makefile-based workflow, CI/CD with GitHub Actions, and MySQL via GORM.
+Supports Docker, Makefile-based workflow and MySQL via GORM.
 
 ---
 
@@ -25,7 +25,6 @@ Supports Docker, Makefile-based workflow, CI/CD with GitHub Actions, and MySQL v
 - SQL migrations using `golang-migrate`
 - Dockerfile (multi-stage build)
 - Makefile for dev workflows
-- GitHub Actions CI/CD pipeline
 - Environment variable configuration (`.env`)
 - Follows REST best practices
 
@@ -39,9 +38,3 @@ Supports Docker, Makefile-based workflow, CI/CD with GitHub Actions, and MySQL v
 - Gorilla Mux Router
 - Docker / Docker Compose
 - golang-migrate
-- GitHub Actions
-
----
-
-## Project Structure
-
