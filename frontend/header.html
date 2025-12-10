@@ -1,0 +1,60 @@
+<!-- HEADER -->
+<header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-semibold hover:text-blue-600">
+            Bookstore Admin
+        </a>
+
+        <div class="relative">
+            <button id="profileBtn"
+                    class="flex items-center space-x-2 px-3 py-2 bg-gray-100 rounded hover:bg-gray-200">
+                <span id="profileName">Loading...</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+
+            <div id="profileMenu"
+                 class="hidden absolute right-0 mt-2 w-40 bg-white shadow rounded border">
+                <a href="/profile.html"
+                   class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+
+                <button id="logoutBtn"
+                        class="w-full text-left px-4 py-2 hover:bg-gray-100">
+                    Logout
+                </button>
+
+                <button id="logoutAllBtn"
+                        class="w-full text-left px-4 py-2 hover:bg-gray-100 border-t">
+                    Logout All Sessions
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        try {
+            const me = await authFetch("/auth/me");
+
+            document.getElementById("profileName").textContent = me.name || me.email;
+        } catch {
+            // Not logged in → redirect to login page
+            window.location.href = "/login.html";
+            return;
+        }
+
+        // Logout
+        document.getElementById("logoutBtn").onclick = async () => {
+            await logout();
+        };
+
+        // Logout All
+        document.getElementById("logoutAllBtn").onclick = async () => {
+            await authFetch("/auth/logout-all", { method: "POST" });
+            logout();
+        };
+    });
+</script>

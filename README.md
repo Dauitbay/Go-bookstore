@@ -30,11 +30,33 @@ Supports Docker, Makefile-based workflow and MySQL via GORM.
 
 ---
 
-## Technologies
+### Technologies
 
 - Go 1.22+
 - GORM v2
 - MySQL
-- Gorilla Mux Router
-- Docker / Docker Compose
 - golang-migrate
+
+### Request Flow
+
+HTTP Request
+
+↓
+
+Controller (validate & read DTO)
+
+↓
+
+Service (business logic)
+
+↓
+
+Repository (database)
+
+↓
+
+Transformer (model → dto)
+
+↓
+
+Controller (HTTP JSON response)

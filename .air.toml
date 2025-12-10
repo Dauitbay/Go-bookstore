@@ -1,0 +1,18 @@
+# Working directory
+root = "."
+
+# What to watch
+[watch]
+  includes = ["."]
+  excludes = ["tmp", "vendor"]
+
+# Build settings
+[build]
+  cmd = "go build -o ./tmp/main ./cmd/main.go"
+  bin = "tmp/main"
+  full_bin = "tmp/main"
+  delay = 1000
+
+# Logger
+[log]
+  time = true
