@@ -60,3 +60,9 @@ Transformer (model → dto)
 ↓
 
 Controller (HTTP JSON response)
+
+
+<img width="1490" height="880" alt="image" src="https://github.com/user-attachments/assets/13efc9d4-0fe8-46e4-b9d3-11058f32c64c" />
+
+<img width="1497" height="881" alt="image" src="https://github.com/user-attachments/assets/42499d15-2253-4725-8977-a46f96910c26" />
+
