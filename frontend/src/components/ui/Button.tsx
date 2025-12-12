@@ -1,0 +1,24 @@
+import React from "react";
+import clsx from "clsx";
+
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    variant?: "primary" | "secondary" | "danger";
+};
+
+export function Button({ variant = "primary", className, ...props }: Props) {
+    const base =
+        "px-4 py-2 rounded-xl font-medium shadow-sm transition-colors disabled:opacity-50";
+
+    const variants = {
+        primary: "bg-primary text-white hover:bg-primary-dark",
+        secondary: "bg-gray-200 hover:bg-gray-300 text-gray-900",
+        danger: "bg-red-600 text-white hover:bg-red-700",
+    };
+
+    return (
+        <button
+            className={clsx(base, variants[variant], className)}
+            {...props}
+        />
+    );
+}

@@ -1,0 +1,4 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export function Table({ columns, data, onSort, sortBy, sortDir }) {
+    return (_jsxs("table", { className: "w-full table-auto border-collapse", children: [_jsx("thead", { children: _jsx("tr", { className: "bg-gray-100 dark:bg-slate-700", children: columns.map((c) => (_jsx("th", { className: "p-2 text-left", children: c.sortable ? (_jsxs("button", { onClick: () => onSort && onSort(String(c.key)), className: "flex items-center gap-2", children: [_jsx("span", { children: c.title }), sortBy === String(c.key) && _jsx("span", { children: sortDir === "asc" ? "▲" : "▼" })] })) : (c.title) }, String(c.key)))) }) }), _jsx("tbody", { children: data.map((row, i) => (_jsx("tr", { className: "even:bg-gray-50 dark:even:bg-slate-800", children: columns.map((c) => (_jsx("td", { className: "p-2 align-top", children: c.render ? c.render(row) : row[c.key] }, String(c.key)))) }, i))) })] }));
+}

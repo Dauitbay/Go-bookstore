@@ -1,0 +1,2 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export const Select = ({ label, options, className, ...rest }) => (_jsxs("label", { className: "block", children: [label && _jsx("div", { className: "mb-1 text-sm text-gray-700 dark:text-slate-200", children: label }), _jsx("select", { className: "w-full border p-2 rounded dark:bg-slate-800 dark:border-slate-700 " + (className || ""), ...rest, children: options.map((o) => (_jsx("option", { value: o.value, children: o.label }, o.value))) })] }));

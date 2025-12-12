@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/backend/migrate/000001_create_books_table.down.sql" value="6490f32a-59e9-4757-bf8b-4c45ed9cbd07" />
+  </component>
+</project>
